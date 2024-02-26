@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "electron:generate-icons": "electron-icon-builder --input=public/icon/icon.png --output=build --flatten"
+    "publish": "electron-forge publish"
   },
   "author": "xlp",
   "license": "ISC",
@@ -22,10 +22,10 @@
     "@electron-forge/maker-zip": "^7.3.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.3.0",
     "@electron-forge/plugin-fuses": "^7.3.0",
+    "@electron-forge/publisher-github": "^7.3.0",
     "electron": "^29.0.1"
   },
   "dependencies": {
-    "electron-icon-builder": "^2.0.1",
     "electron-squirrel-startup": "^1.0.0"
   }
 }

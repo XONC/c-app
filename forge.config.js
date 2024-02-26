@@ -7,6 +7,22 @@ module.exports = {
     icon: path.join(__dirname, 'public/icon/icon.ico')// no file extension required
   },
   rebuildConfig: {},
+  // 自动更新的配置
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        authToken: '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',
+        repository: {
+          owner: 'xcon',
+          name: 'c-app'
+        },
+        prerelease: false,
+        draft: true,
+        releaseType: 'release'
+      }
+    }
+  ],
   makers: [
     {
       // window
