@@ -1,5 +1,7 @@
-const { app, BrowserWindow, ipcMain } = require('electron/main')
+const { app, BrowserWindow, ipcMain,autoUpdater  } = require('electron/main')
 const path = require('node:path')
+// import isDev from "electron-is-dev";
+// const {isDev} = require('electron-is-dev')
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
@@ -29,3 +31,17 @@ app.on('window-all-closed', () => {
         app.quit()
     }
 })
+
+
+
+
+    // require('update-electron-app')()
+    const server = 'https://update.electronjs.org'
+    const feed = `${server}/OWNER/REPO/${process.platform}-${process.arch}/${app.getVersion()}`
+
+    autoUpdater.setFeedURL(feed)
+
+    setInterval(() => {
+        autoUpdater.checkForUpdates()
+    }, 5000)
+    console.log('Running in production');
